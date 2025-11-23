@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-def no_c(my_string):
-    new_string = ""
-    for char in my_string:
-        if char != 'c' and char != 'C':
-            new_string += char
-    return new_string
+def add_tuple(tuple_a=(), tuple_b=()):
+    a = tuple_a + (0, 0)
+    b = tuple_b + (0, 0)
+    return (a[0] + b[0], a[1] + b[1])
+
