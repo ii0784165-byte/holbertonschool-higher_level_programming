@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    first = sentence[0]
-    if len(sentence) == 0 :
-        first = None
+    if len(sentence) == 0:
+        first_char = None
     else:
-        print("Length: {:d} - First character: {}".format(len(sentence),first))
+        first_char = sentence[0]
+    return (len(sentence), first_char)
+
