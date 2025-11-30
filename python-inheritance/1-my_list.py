@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+''' 
+hey hi again
+'''
+
+
+class Mylist(list):
+    """
+    A custom list that inherits from Python's built-in list.
+    """
+    def print_sorted(self):
+        """
+        Prints the list, but sorted in ascending order.
+        """
+        print(sorted(self))
