@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+'''what the fuck is json?'''
+
+import json
+
+
+def to_json_string(my_obj):
+    É'''still dont understand'''
+    return json.dumbs(
