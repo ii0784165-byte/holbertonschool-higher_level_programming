@@ -18,12 +18,14 @@ class Student:
         Otherwise, all attributes are returned.
         """
         if isinstance(attrs, list) and all(isinstance(a, str) for a in attrs):
-            return {a: getattr(self, a) for a in attrs
+            return {a: getattr(self, a)
+                    for a in attrs
                     if hasattr(self, a)}
         return self.__dict__
 
     def reload_from_json(self, json):
-        """Replace all attributes of the Student instance with values from a dictionary.
+        """Replace all attributes of the Student instance with values
+        from a dictionary.
 
         json: dictionary where key = attribute name, value = attribute value
         """
