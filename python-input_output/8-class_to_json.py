@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-'''nese'''
+"""Function that returns the dictionary description for JSON serialization."""
+
 
 def class_to_json(obj):
-    '''nese'''
+    """Return the dictionary representation of an object."""
     return obj.__dict__
