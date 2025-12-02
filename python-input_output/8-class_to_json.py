@@ -3,4 +3,4 @@
 
 def class_to_json(obj):
     '''nese'''
-    obj.__dict__.copy()
+    return obj.__dict__
