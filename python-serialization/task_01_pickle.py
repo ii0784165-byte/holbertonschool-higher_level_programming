@@ -1,4 +1,4 @@
-!#/#!/usr/bin/env python3
+#!/usr/bin/env python3
 """CustomObject serialization using pickle"""
 
 import pickle
