@@ -1,22 +1,23 @@
 #!/usr/bin/python3
-"""Student class module"""
+"""Defines a simple Student class."""
 
 
 class Student:
-    """Defines a student with first name, last name, and age"""
+    """Student model."""
 
     def __init__(self, first_name, last_name, age):
-        """Initialize a Student instance"""
+        """Initialize attributes."""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """Return a dictionary representation of the Student instance.
+        """Return dictionary representation of the student."""
+        if type(attrs) is list:
+            new_dict = {}
+            for key in attrs:
+                if type(key) is str and key in self.__dict__:
+                    new_dict[key] = self.__dict__[key]
+            return new_dict
 
-        If attrs is a list of strings, only attributes in this list are returned.
-        Otherwise, all attributes are returned.
-        """
-        if isinstance(attrs, list) and all(isinstance(a, str) for a in attrs):
-            return {a: getattr(self, a) for a in attrs if hasattr(self, a)}
         return self.__dict__
