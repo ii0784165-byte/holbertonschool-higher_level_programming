@@ -1,19 +1,20 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class with width, height, area, perimeter,
-print, and representation capabilities."""
+"""
+This module defines a Rectangle class.
+"""
 
 
 class Rectangle:
-    """Represents a rectangle."""
+    """Represents a rectangle with width and height."""
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle."""
+        """Initialize a new rectangle."""
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Get the width."""
+        """Retrieve the width."""
         return self.__width
 
     @width.setter
@@ -27,7 +28,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get the height."""
+        """Retrieve the height."""
         return self.__height
 
     @height.setter
@@ -50,13 +51,19 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the rectangle using '#' characters."""
+        """Return the rectangle using # for printing."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(["#" * self.__width for _ in range(self.__height)])
+
+        rows = []
+        for _ in range(self.__height):
+            rows.append("#" * self.__width)
+        return "\n".join(rows)
 
     def __repr__(self):
-        """Return a string representation to recreate a new instance."""
+        """Return a string representation used to recreate the rectangle."""
         return f"Rectangle({self.__width}, {self.__height})"
+
     def __del__(self):
+        """Print a message when a rectangle is deleted."""
         print("Bye rectangle...")
